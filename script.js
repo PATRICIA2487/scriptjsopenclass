@@ -181,60 +181,58 @@ Mais bien sûr, il existe d’autres manières de réussir l’exercice !*/
    
     //--------étape 1----------
 
-  /*  const listeMots = ["Cachalot", "Pétunia", "Serviette"]; 
-    let score = 0;
-    /*let motUtilisateur = prompt ("Entrez le mot : " + listeMots[i])   -> FAUX => NON A LA LIGNE 34 !!! => REPRENDRE ENONCE : LIGNE 8 */
-    
-    /* -> reprise des prompts de l'exo précédent => boucle*/
-    
-    /*for (let score = 0; motUtilisateur<listeMots.len; score++) -> FAUX => TJS REMPLACER PAR i (index / indice) */
- /*   for (let i = 0; i<listeMots.length; i++) {
-        let motUtilisateur = prompt ("Entrez le mot : " + listeMots[i])   //-> NON A LA LIGNE 34 !!! => REPRENDRE ENONCE : LIGNE 8
-        if (motUtilisateur===listeMots[i]) {
-            score++
-        }
-    /*console.log (score)  -> FAUX + A SAISIR HORS {} + TEXTE ERRONE 
-    }   */    
-    //CORRECTION : 
- /*   console.log ("votre score est de " + score + " sur 3")  /* A NOTER : possibilité de remplacer  "sur 3" par listeMots.length => mise à jour automatique en cas de rajout de mot(s) dans le tableau */
-    
-        //--------étape 2----------
-    
-    const listePhrases = ["Pas de panique !", "La vie, l'univers et le reste", "Merci pour le poisson"]  // -> suivant corrigé, à insérer plutôt ligne 32... ici saisi en fonction étapes de l'énoncé
-    /*motUtilisateur = prompt ("Entrez le mot : " + listeMots[i] || "Entrez le mot : " + listePhrases[i])   -> ligne 51 à 56 : FAUX
-    
-    if (motUtilisateur === listeMots [i])
-      write ("mots")
-    else (motUtilisateur === listePhrases [i])
-      write ("phrases")*/
-    //CORRECTION :
- /*   let choix = prompt ("Veuillez choisir la liste mots ou phrases")
-    
-    /*while (choix != mots || choix != phrases)   //-> PENSER A PLUTÔT UTILISER !==
-        prompt("Veuillez choisir la liste mots ou phrases")     -> FAUX !!! ATTENTION : BOUCLE INFINIE, FENÊTRE DE DIALOGUE NE SE FERME PAS !!! */
-    // CORRECTION :
- /*   while (choix !== "mots" && choix !== "phrases") {
-      choix = prompt ("Veuillez choisir la liste mots ou phrases")
-    }
-    
-    //CORRECION SUITE CODES MANQUANTS :
-    if (choix === "mots") {
-      for (let i = 0; i < listeMots.length; i++) {
-        let motUtilisateur = prompt ("Entrez le mot : " + listeMots[i])   //-> NON A LA LIGNE 34 !!! => REPRENDRE ENONCE : LIGNE 8
-        if (motUtilisateur===listeMots[i]) {
-            score++
-        }
-    }   
-    console.log ("votre score est de " + score + " sur " + listeMots.length) //-> saisi également à l'intérieur condition : ne pas oublier que nous ne savons pas le choix de l'utilisateur
-      
-    } else {    /* sous entendu (choix === phrases) */ // -> Lignes 63 à 72 non saisies => codage faux */
- /*     for (let i = 0; i < listePhrases.length; i++) {
-        let motUtilisateur = prompt ("Entrez la phrase : " + listePhrases[i])   
-        if (motUtilisateur===listePhrases[i]) {
-            score++
-        }
-    } 
-    console.log ("votre score est de " + score + " sur " + listePhrases.length)
-    }  */
+const listeMots = ["Cachalot", "Pétunia", "Serviette"];
+let score = 0;
+/*let motUtilisateur = prompt ("Entrez le mot : " + listeMots[i])   -> FAUX => NON A LA LIGNE 28 !!! => REPRENDRE LIGNE 8 ENONCE */
 
-    
+/* -> reprise des prompts de l'exo précédent => boucle*/
+
+/*for (let score = 0; motUtilisateur<listeMots.len; score++) -> FAUX => TJS REMPLACER PAR i (index / indice) */
+/*for (let i = 0; i<listeMots.length; i++) {
+    let motUtilisateur = prompt ("Entrez le mot : " + listeMots[i])   
+    if (motUtilisateur===listeMots[i]) {
+        score++
+    }
+/*console.log (score)  -> FAUX + A SAISIR HORS {} + TEXTE ERRONE */
+/*}  */
+//CORRECTION : 
+/*console.log ("votre score est de " + score + " sur 3")  /* A NOTER : possibilité de remplacer  "sur 3" par listeMots.length => mise à jour automatique en cas de rajout de mot(s) dans le tableau */
+
+    //--------étape 2----------
+
+const listePhrases = ["Pas de panique !", "La vie, l'univers et le reste", "Merci pour le poisson"]  // -> suivant corrigé, à insérer plutôt ligne 27... ici saisi en fonction étapes de l'énoncé
+/*motUtilisateur = prompt ("Entrez le mot : " + listeMots[i] || "Entrez le mot : " + listePhrases[i])   -> ligne 46 à 51 : FAUX
+
+if (motUtilisateur === listeMots [i])
+  write ("mots")
+else (motUtilisateur === listePhrases [i])
+  write ("phrases")*/
+//CORRECTION :
+/*let choix = prompt ("Veuillez choisir la liste mots ou phrases")
+
+/*while (choix != mots || choix != phrases)   //-> PENSER A PLUTÔT UTILISER !==
+    prompt("Veuillez choisir la liste mots ou phrases")     -> FAUX !!! ATTENTION : BOUCLE INFINIE, FENÊTRE DE DIALOGUE NE SE FERME PAS !!! */
+// CORRECTION :
+/*while (choix !== "mots" && choix !== "phrases") {
+  choix = prompt ("Veuillez choisir la liste mots ou phrases")
+}
+
+//CORRECION SUITE CODES MANQUANTS :
+if (choix === "mots") {
+  for (let i = 0; i < listeMots.length; i++) {
+    let motUtilisateur = prompt ("Entrez le mot : " + listeMots[i])   
+    if (motUtilisateur===listeMots[i]) {
+        score++
+    }
+}   
+console.log ("votre score est de " + score + " sur " + listeMots.length) //-> saisi également à l'intérieur condition : ne pas oublier que nous ne savons pas le choix de l'utilisateur
+  
+} else {    /* sous entendu (choix === phrases) */ // -> Lignes 63 à 72 non saisies => codage faux
+/*  for (let i = 0; i < listePhrases.length; i++) {
+    let motUtilisateur = prompt ("Entrez la phrase : " + listePhrases[i])   
+    if (motUtilisateur===listePhrases[i]) {
+        score++
+    }
+} 
+console.log ("votre score est de " + score + " sur " + listePhrases.length)
+} */
