@@ -181,7 +181,7 @@ Mais bien sûr, il existe d’autres manières de réussir l’exercice !*/
    
     //--------étape 1----------
 
-const listeMots = ["Cachalot", "Pétunia", "Serviette"];
+/*const listeMots = ["Cachalot", "Pétunia", "Serviette"];
 let score = 0;
 /*let motUtilisateur = prompt ("Entrez le mot : " + listeMots[i])   -> FAUX => NON A LA LIGNE 28 !!! => REPRENDRE LIGNE 8 ENONCE */
 
@@ -200,7 +200,7 @@ let score = 0;
 
     //--------étape 2----------
 
-const listePhrases = ["Pas de panique !", "La vie, l'univers et le reste", "Merci pour le poisson"]  // -> suivant corrigé, à insérer plutôt ligne 27... ici saisi en fonction étapes de l'énoncé
+/*const listePhrases = ["Pas de panique !", "La vie, l'univers et le reste", "Merci pour le poisson"]  // -> suivant corrigé, à insérer plutôt ligne 27... ici saisi en fonction étapes de l'énoncé
 /*motUtilisateur = prompt ("Entrez le mot : " + listeMots[i] || "Entrez le mot : " + listePhrases[i])   -> ligne 46 à 51 : FAUX
 
 if (motUtilisateur === listeMots [i])
@@ -236,3 +236,138 @@ console.log ("votre score est de " + score + " sur " + listeMots.length) //-> sa
 } 
 console.log ("votre score est de " + score + " sur " + listePhrases.length)
 } */
+
+
+//------------Exercice - fonctions---------
+/*Étape 1 : découpez votre code en fonctions
+Notre but est maintenant d’améliorer l’organisation et la lisibilité de notre code. Je vous propose donc de créer les fonctions suivantes : 
+  afficherResultat : cette fonction prend en paramètre le résultat et le nombre total de mots proposés, et affiche le résultat du joueur ; 
+  choisirPhrasesOuMots : cette fonction demande à l’utilisateur s’il veut jouer avec des phrases ou des mots. 
+    Tant que l’utilisateur n’a pas répondu “phrases” ou “mots”, la question lui est posée en boucle. La fonction ne prend aucun paramètre, mais retourne ce que l’utilisateur a répondu.
+  lancerBoucleDeJeu : cette fonction contient la boucle principale de jeu, c'est-à-dire la boucle for qui propose les mots/phrases au joueur, et lui demande de taper ces mots. Elle prend en paramètre le tableau de mots/phrases qui sera proposé au joueur, et retourne le nombre de mots/phrases correctement tapés ;
+  lancerJeu : cette fonction sera la fonction principale, c’est elle qui s’occupe de lancer toutes les autres. En d’autres termes, c’est elle qui va appeler les fonctions que vous venez d’écrire. 
+
+Étape 2 : séparez votre code en plusieurs fichiers
+  Séparez votre code en plusieurs fichiers.
+  Créez un fichier config.js qui contiendra uniquement les deux listes de propositions.
+  Créez un fichier main.js qui contiendra uniquement l’appel à la fonction principale lancerJeu.
+  Vérifiez que tout fonctionne encore.
+  Créez un nouveau répertoire appelé “scripts”, et placez-y tous vos fichiers.
+  Vérifiez à nouveau votre code. 😃
+
+Pour réussir cette étape, pensez bien à mettre à jour le fichier HTML !*/
+
+
+        //--------étape 1----------
+   /* const listeMots = ["Cachalot", "Pétunia", "Serviette"]; 
+    const listePhrases = ["Pas de panique !", "La vie, l'univers et le reste", "Merci pour le poisson"];
+    //let score = 0 //-> dans dernière fonction
+        
+    function afficherResultat (score, nombreDeMotsProposes) {
+        //console.log ("votre score est de " + score + " sur " + listeMots.length)  // -> copié/collé affichage souhaité score - exo boucles => COUPE/COLLE LORSQUE SUR VSCODE -> ICI LES EXOS ONT ETE SEPARES
+        // fin incorrecte => nombre de mots proposés souhaité et non liste intégrale !!! 
+        console.log ("votre score est de " + score + "sur " + nombreDeMotsProposes)
+    }
+        
+    //function choix (mots, phrases) {    // NON !!! -> NE PAS OUBLIER : UTILISER PRINCIPALEMENT DES VERBES => DISTINCTION SI MULTIPLES FONCTIONS - + DDE ENONCE !!! 
+    //CORRECTION :  
+    function choisirPhrasesOuMots () {    // NE PAS OUBLIER -> 0 PARAMETRE => CHOIX UTILISATEUR
+        let choix = prompt ("Veuillez choisir la liste mots ou phrases")   
+            // -> copié/collé - exo boucles => CORRECT => COUPE/COLLE LORSQUE SUR VSCODE -> ICI LES EXOS ONT ETE SEPARES
+        while (choix !== "mots" && choix !== "phrases") {                  
+            // -> copié/collé - exo boucles => CORRECT => COUPE/COLLE LORSQUE SUR VSCODE -> ICI LES EXOS ONT ETE SEPARES
+        choix = prompt ("Veuillez choisir la liste mots ou phrases") }     
+            // -> copié/collé - exo boucles => CORRECT => COUPE/COLLE LORSQUE SUR VSCODE -> ICI LES EXOS ONT ETE SEPARES
+        return choix        // NE PAS OUBLIER DE RETOURNER POUR UTILISATION ULTERIEURE 
+          //console.log (choix) -> faux + codes manquants 
+    }
+    //CORRECTION CODES MANQUANTS 
+        // boucle de jeu -> utilisateur doit saisir les mots ou phrases => NOUVELLE FONCTION
+        // copié/collé - exo boucles => COUPE/COLLE LORSQUE SUR VSCODE -> ICI LES EXOS ONT ETE SEPARES
+    function lancerBoucleDeJeu (listePropositions) {  
+        //ListePropositions : nous avons donné à cette fonction la liste à utiliser => précédente fonction
+        for (let i = 0; i < listePropositions.length; i++) {
+            let motUtilisateur = prompt ("Entrez le mot : " + listePropositions[i])   
+        if (motUtilisateur === listePropositions[i]) {
+            score++
+            }
+        }
+        return score    // NE PAS OUBLIER DE RETOURNER : -> ENONCE => score demandé
+    }  
+          
+    function lancerJeu () {   
+        //-> lie les 3 précédentes fonctions entre elles et lance donc le jeu AZERTYPE => là encore -> 0 paramètre
+        // en 1, choix de l'utilisateur entre jouer avec les mots ou les phrases
+        let choix = choisirPhrasesOuMots ()
+        //let jeu = LancerBoucleDeJeu ;   -> FAUX
+        //let resultats = afficherResultat ;-> FAUX 
+        // CORRECTION : 
+        let score = 0 ;
+        let nombreDeMotsProposes = 0
+            
+        if (choix === "mots") {
+            lancerBoucleDeJeu (listeMots)
+            nombreDeMotsProposes = listeMots.length
+        } 
+        else {
+            lancerBoucleDeJeu (listePhrases)
+            nombreDeMotsProposes = listePhrases.length
+        }
+        afficherResultat (score, nombreDeMotsProposes)
+    } // A CE STADE, L'EXO BOUCLES N'A DONC PLUS LIEU D'ETRE, ICI TOUT A ETE REMPLACE ET DONC SIMPLIFIE
+        
+        //console.log (lancerJeu) -> FAUX 
+    lancerJeu () */
+          
+            //--------étape 2----------
+/*2e partie HTML créée 
+    => suite ajout .js => visibilité détaillée           
+Etape répartie dans .js respectifs
+    confij.js
+    main.js   
+COPIE/COLLE ETAPE 1 (retrait corrections)
+    => reprise pour visibilité détaillée de l'exo  */
+
+    /* -> A déplacer dans config.js
+    const listeMots = ["Cachalot", "Pétunia", "Serviette"]; 
+    const listePhrases = ["Pas de panique !", "La vie, l'univers et le reste", "Merci pour le poisson"];
+    */
+       
+    function afficherResultat (score, nombreDeMotsProposes) {
+        console.log ("votre score est de " + score + "sur " + nombreDeMotsProposes)
+    }
+            
+    function choisirPhrasesOuMots () {  
+        let choix = prompt ("Veuillez choisir la liste mots ou phrases")   
+        while (choix !== "mots" && choix !== "phrases") {                  
+            choix = prompt ("Veuillez choisir la liste mots ou phrases") }     
+        return choix       
+    function lancerBoucleDeJeu (listePropositions) {  
+        for (let i = 0; i < listePropositions.length; i++) {
+            let motUtilisateur = prompt ("Entrez le mot : " + listePropositions[i])   
+        if (motUtilisateur === listePropositions[i]) {
+            score++
+            }
+        }
+        return score    
+    }  
+      
+    /* A déplacer dans main.js    
+    function lancerJeu () {   
+        let choix = choisirPhrasesOuMots ()
+        let score = 0 ;
+        let nombreDeMotsProposes = 0
+           
+        if (choix === "mots") {
+            lancerBoucleDeJeu (listeMots)
+            nombreDeMotsProposes = listeMots.length
+        } 
+        else {
+            lancerBoucleDeJeu (listePhrases)
+            nombreDeMotsProposes = listePhrases.length
+        }
+        afficherResultat (score, nombreDeMotsProposes)
+    } 
+    */
+
+    lancerJeu ()
