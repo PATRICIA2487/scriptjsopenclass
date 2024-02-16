@@ -337,12 +337,15 @@ COPIE/COLLE ETAPE 1 (retrait corrections)
         console.log ("votre score est de " + score + "sur " + nombreDeMotsProposes)
     }
             
-    function choisirPhrasesOuMots () {  
+    function choisirPhrasesOuMots () {
         let choix = prompt ("Veuillez choisir la liste mots ou phrases")   
         while (choix !== "mots" && choix !== "phrases") {                  
             choix = prompt ("Veuillez choisir la liste mots ou phrases") }     
         return choix       
+    }
+
     function lancerBoucleDeJeu (listePropositions) {  
+        let score = 0
         for (let i = 0; i < listePropositions.length; i++) {
             let motUtilisateur = prompt ("Entrez le mot : " + listePropositions[i])   
         if (motUtilisateur === listePropositions[i]) {
@@ -351,8 +354,7 @@ COPIE/COLLE ETAPE 1 (retrait corrections)
         }
         return score    
     }  
-      
-    /* A déplacer dans main.js    
+          
     function lancerJeu () {   
         let choix = choisirPhrasesOuMots ()
         let score = 0 ;
@@ -368,6 +370,8 @@ COPIE/COLLE ETAPE 1 (retrait corrections)
         }
         afficherResultat (score, nombreDeMotsProposes)
     } 
-    */
+    
 
+    /* A déplacer dans main.js    
     lancerJeu ()
+    */
